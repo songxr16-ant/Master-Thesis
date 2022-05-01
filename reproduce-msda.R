@@ -3,7 +3,7 @@ library(Matrix)
 library(MASS)
 
 # model 1 #
-Repeat = 500
+Repeat = 3
 error_rate = matrix(data=0, nrow=1, ncol=Repeat)
 accuracy = matrix(data=0, nrow=1, ncol=Repeat)
 
@@ -98,7 +98,7 @@ for (t in 1:Repeat) {
 }
 
 err = mean(error_rate)
-stdvar = var(error_rate)
+stdvar = sqrt(var(as.numeric(error_rate)))
 
 
 
